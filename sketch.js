@@ -34,10 +34,9 @@ function setup() {
   selector.option('Number_10');
   selector.changed(changeTexture);
   
-  let em = width/10;
-  w = 2*em;
-  h = em;
-  l = 2*em;
+  w = 300;
+  h = 300;
+  l = 300;
 	
 	x = random(-maxX/2 + w, maxX/2 - w);
 	y = random(-maxY/2 + h, maxY/2 - h);
