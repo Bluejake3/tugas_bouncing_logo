@@ -5,6 +5,7 @@ let maxX, maxY, maxZ;
 
 let speed;
 let slider;
+let selector;
 
 let xVel, yVel, zVel;
 
@@ -25,6 +26,13 @@ function setup() {
 	maxX = width;
 	maxY = height;
 	maxZ = width*7/8;
+	
+	selector = createSelect();
+  selector.position(100, 200);
+  selector.option('DVD');
+  selector.option('Ball');
+  selector.option('Number_10');
+  selector.changed(changeTexture);
   
   let em = width/10;
   w = 2*em;
@@ -59,6 +67,19 @@ function randomizeColor() {
   r = random(255);
   g = random(255);
   b = random(255);
+}
+
+function changeTexture() {
+  let val = selector.value();
+
+  if (val == 'DVD') {
+    img = loadImage('dvd_logo_0002.png');
+  } else if (val == 'Ball') {
+    img = loadImage('Ball.png');
+  } else if (val == 'Number_10') {
+    img = loadImage('number_10.png');
+  }
+
 }
 
 function draw() {
